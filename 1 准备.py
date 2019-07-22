@@ -1,5 +1,4 @@
 
-import sklearn
 from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer
 from sklearn.preprocessing import MinMaxScaler,StandardScaler
 from sklearn.feature_selection import VarianceThreshold
@@ -45,7 +44,6 @@ a = trans.fit_transform(data)
 print(a)
 
 # 相关系数
-import numpy as np
 a = pearsonr(data[0],data[1])
 print(a)
 
@@ -57,3 +55,27 @@ data = [[2,8,4,5],[6,3,0,8],[5,4,9,1]]
 trans = PCA(n_components=0.95)
 a = trans.fit_transform(data)
 print(a)
+
+import sklearn
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction import DictVectorizer
+# dataset
+# load_*    小数据集
+# fetch_*   大数据集
+a = sklearn.datasets.load_iris()
+print(a.DESCR)
+
+# 数据集划分
+# x,y
+# test_size 测试集大小比例
+# random_state
+x_train,x_test,y_train,y_test = train_test_split(a.data,a.target)
+print(x_test)
+
+# 特征提取
+data = [{'city':'2','tem':1},{'city':'3','tem':3}]
+trans = DictVectorizer(sparse=False)
+c = trans.fit_transform(data)
+print(c)
+print(trans.get_feature_names())
+# sparse 稀疏矩阵,按位置表示出来

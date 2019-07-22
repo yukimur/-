@@ -16,11 +16,13 @@ data = load_boston()
 # 划分数据集
 x_train,x_test,y_train,y_test= train_test_split(data.data,data.target,random_state=22)
 # 特征工程
+
 trans = StandardScaler()
 x_train = trans.fit_transform(x_train)
 x_test = trans.transform(x_test)
 # 线性回归
 estimator = SGDRegressor(eta0=0.001,max_iter=10000)
+print(x_train.shape,y_train.shape)
 estimator.fit(x_train,y_train)
 
 # 模型评估:用均方误差衡量

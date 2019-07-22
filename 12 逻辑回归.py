@@ -26,5 +26,14 @@ estimator.fit(x_train,y_train)
 # 模型评估
 print(estimator.coef_)
 print(estimator.intercept_)
+y_pred = estimator.predict(x_test)
 score = estimator.score(x_test,y_test)
 print(score)
+
+# 查看精确率，召回率，f1  准确率？？
+from sklearn.metrics import classification_report
+
+report = classification_report(y_test,y_pred,labels=['M','B'],target_names=['良性','恶性'])
+print(report)
+
+# 若样本严重不均衡，则以上指标可能是错的，此时引入ROC曲线与AUC指标

@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 
-# 交叉验证：将数据分为n份，进行n次测试，每次更换不同的验证集
-# 网格搜索
+# 交叉验证：将数据分为n份，进行n次测试，每次更换不同的验证集，为了选择模型
+# 网格搜索：为了选择参数
 
 def knn_gscv():
     # 获取数据
