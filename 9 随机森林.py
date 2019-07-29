@@ -4,10 +4,19 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.ensemble import RandomForestClassifier
 
+# 集成算法
+    # bagging模型：并行模型，随机森林
+    # boosting模型:串行模型，adaBoost,XgBoost
+    # stacking:堆叠
+
 # 随机森林是一个包含多个决策树的分类器，属于集成学习方法
 # 随机
     # 训练集随机：bootstrap抽样
     # 特征值随机：从M个特征随机取m个
+# 优点
+    # 能处理维度高的数据，并且可以不作特征选择  feature_importance
+    # 能看出哪些特征比较重要
+    # 快，便于可视化
 
 # 数据准备
 train = pd.read_csv('titanic/train.csv')

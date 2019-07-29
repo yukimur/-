@@ -56,13 +56,13 @@ trans = PCA(n_components=0.95)
 a = trans.fit_transform(data)
 print(a)
 
-import sklearn
+from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 # dataset
 # load_*    小数据集
 # fetch_*   大数据集
-a = sklearn.datasets.load_iris()
+a = load_iris()
 print(a.DESCR)
 
 # 数据集划分
